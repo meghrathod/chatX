@@ -31,7 +31,7 @@ public class pubServer {
 
         BufferedReader csvReader;
         try {
-            csvReader = new BufferedReader(new FileReader("D:\\CSE\\Projects\\chatX\\src\\tech\\meghrathod\\chatX\\server\\users.csv"));
+            csvReader = new BufferedReader(new FileReader("src/tech/meghrathod/chatX/server/users.csv"));
             while ((row = csvReader.readLine()) != null) {
                 String[] user = row.split(",");
                 Userdb.add(new User(user[0], user[1]));
@@ -48,6 +48,25 @@ public class pubServer {
         }
         return exists;
     }
+
+    public static int authenticate(ObjectInputStream ois){
+        try {
+            String received = (String) ois.readObject();
+            String[] separate = received.split(",");
+            User check = new User(separate[0],separate[1] );
+            if(pubServer.checkUser(check.username, check.password) == 0){
+                return 0;
+            } else {
+                return 1;
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
+
+
+
+    }
 }
 
 
@@ -62,21 +81,9 @@ class MessageQueue<T> {
             try {
                 wait();
             } catch (Exception ex) {
+                System.out.println(ex);
             }
         }
         return al.remove(0);
     }
-    // synchronized public void print() {
-    //     for (T i : al) {
-    //         System.out.println(i);
-    //     }
-    // }
-    // @Override
-    // synchronized public String toString() {
-    //     String str = null;
-    //     for (T s : al) {
-    //         str += "::" + s;
-    //     }
-    //     return str;
-    // }
 }

@@ -12,11 +12,7 @@ public class Conversation extends Thread {
     @Override
     public void run() {
         try {
-        //     BufferedReader nis = new BufferedReader(
-        //             new InputStreamReader(
-        //                     soc.getInputStream()
-        //             )
-        //     );
+
             PrintWriter nos = new PrintWriter(
                     new BufferedWriter(
                             new OutputStreamWriter(
@@ -26,9 +22,13 @@ public class Conversation extends Thread {
             );
 
 
-            ObjectInputStream ois = new ObjectInputStream(soc.getInputStream()); 
-        //     ObjectOutputStream oos = new ObjectOutputStream(soc.getOutputStream());
-
+            ObjectInputStream ois = new ObjectInputStream(soc.getInputStream());
+            while(pubServer.authenticate(ois)==0){
+                System.out.println("Server checking user");
+                nos.println("fail");
+            }
+            System.out.println("Server checking user");
+            nos.println("success");
 
             pubServer.noslist.add(nos);
             userMessage msg = (userMessage) ois.readObject();
@@ -45,6 +45,7 @@ public class Conversation extends Thread {
                             soc.getInetAddress().getHostAddress() +
                             " Terminated");
         } catch (Exception e) {
+            System.out.println(e);
         }
     }
 }

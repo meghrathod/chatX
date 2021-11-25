@@ -10,7 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class ChatWindow extends Thread implements WindowListener  {
+public class ChatWindow extends Thread {
     JFrame f1;
     BufferedReader nis;
     ObjectOutputStream oos;
@@ -90,33 +90,7 @@ public class ChatWindow extends Thread implements WindowListener  {
 
 
 
-    @Override
-    public void windowClosed(WindowEvent e) {
-    }
 
-    @Override
-    public void windowOpened(WindowEvent e) {
-    }
-
-    @Override
-    public void windowClosing(WindowEvent e) {
-    }
-
-    @Override
-    public void windowIconified(WindowEvent e) {
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent e) {
-    }
-
-    @Override
-    public void windowActivated(WindowEvent e) {
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent e) {
-    }
 
 }
 
