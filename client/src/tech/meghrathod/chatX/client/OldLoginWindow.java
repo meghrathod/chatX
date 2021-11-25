@@ -78,14 +78,14 @@ public class OldLoginWindow implements ActionListener{
         String user = userText.getText();
         String pass = String.valueOf(passText.getPassword());
 
-        if(tech.meghrathod.chatX.server.pubServer.checkUser(user, pass) == 1){
-            authenticateUser();
-            currentUser = user;
-            loginWindow.dispose();
-        } else {
-            passText.setText("");
-            heading.setText("<html><font color='red'>Invalid Credentials!</font></html>");
-        }
+//        if(tech.meghrathod.chatX.server.pubServer.checkUser(user, pass) == 1){
+//            authenticateUser();
+//            currentUser = user;
+//            loginWindow.dispose();
+//        } else {
+//            passText.setText("");
+//            heading.setText("<html><font color='red'>Invalid Credentials!</font></html>");
+//        }
     }
 
 //    public int authenticateUser(String user, String pass){

@@ -1,4 +1,6 @@
-package tech.meghrathod.chatX.server;
+package tech.meghrathod.server;
+
+import tech.meghrathod.userMessage;
 
 import java.io.*;
 import java.net.Socket;
@@ -24,10 +26,8 @@ public class Conversation extends Thread {
 
             ObjectInputStream ois = new ObjectInputStream(soc.getInputStream());
             while(pubServer.authenticate(ois)==0){
-                System.out.println("Server checking user");
                 nos.println("fail");
             }
-            System.out.println("Server checking user");
             nos.println("success");
 
             pubServer.noslist.add(nos);

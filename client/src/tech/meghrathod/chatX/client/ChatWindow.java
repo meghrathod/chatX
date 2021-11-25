@@ -1,6 +1,6 @@
 package tech.meghrathod.chatX.client;
 
-import tech.meghrathod.chatX.server.userMessage;
+import tech.meghrathod.userMessage;
 
 import javax.swing.*;
 import javax.swing.text.BadLocationException;

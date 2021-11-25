@@ -1,4 +1,6 @@
-package tech.meghrathod.chatX.server;
+package tech.meghrathod.server;
+
+import tech.meghrathod.userMessage;
 
 import java.io.PrintWriter;
 

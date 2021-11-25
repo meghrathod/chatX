@@ -1,4 +1,6 @@
-package tech.meghrathod.chatX.server;
+package tech.meghrathod.server;
+import tech.meghrathod.userMessage;
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
@@ -31,7 +33,7 @@ public class pubServer {
 
         BufferedReader csvReader;
         try {
-            csvReader = new BufferedReader(new FileReader("src/tech/meghrathod/chatX/server/users.csv"));
+            csvReader = new BufferedReader(new FileReader("D:\\CSE\\Projects\\old\\chatX\\server\\src\\tech\\meghrathod\\server\\users.csv"));
             while ((row = csvReader.readLine()) != null) {
                 String[] user = row.split(",");
                 Userdb.add(new User(user[0], user[1]));

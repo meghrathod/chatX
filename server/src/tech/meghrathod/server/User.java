@@ -1,4 +1,4 @@
-package tech.meghrathod.chatX.server;
+package tech.meghrathod.server;
 
 
 public class User {
