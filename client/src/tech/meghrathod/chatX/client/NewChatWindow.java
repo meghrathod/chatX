@@ -70,6 +70,7 @@ public class NewChatWindow extends JFrame {
         send.setText("Send");
 
         send.addActionListener(l1);
+        tf.addActionListener(l1);
 
         GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
