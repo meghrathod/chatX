@@ -1,4 +1,4 @@
-package tech.meghrathod.chatX.client;
+package tech.meghrathod.client;
 
 import java.io.Serializable;
 

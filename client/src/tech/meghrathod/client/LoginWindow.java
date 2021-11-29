@@ -1,5 +1,5 @@
 
-package tech.meghrathod.chatX.client;
+package tech.meghrathod.client;
 
 import javax.swing.*;
 import java.awt.*;

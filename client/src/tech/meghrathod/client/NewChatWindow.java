@@ -1,4 +1,4 @@
-package tech.meghrathod.chatX.client;
+package tech.meghrathod.client;
 
 
 import tech.meghrathod.userMessage;
@@ -129,6 +129,7 @@ public class NewChatWindow extends JFrame {
                 }
             }
         };
+        this.addWindowListener(adapter);
 
         pack();
     }

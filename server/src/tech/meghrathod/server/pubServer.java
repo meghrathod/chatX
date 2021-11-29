@@ -33,7 +33,8 @@ public class pubServer {
 
         BufferedReader csvReader;
         try {
-            csvReader = new BufferedReader(new FileReader("D:\\CSE\\Projects\\old\\chatX\\server\\src\\tech\\meghrathod\\server\\users.csv"));
+            URL url = new URL("https://cdn.jsdelivr.net/gh/meghrathod/chatX@master/server/src/tech/meghrathod/server/users.csv");
+            csvReader = new BufferedReader(new InputStreamReader(url.openStream()));
             while ((row = csvReader.readLine()) != null) {
                 String[] user = row.split(",");
                 Userdb.add(new User(user[0], user[1]));
