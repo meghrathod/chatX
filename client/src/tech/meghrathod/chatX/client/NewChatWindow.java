@@ -20,7 +20,7 @@ public class NewChatWindow extends JFrame {
     NewChatArea ta;
     JTextField tf;
     static String username;
-    public ChatHandler ch;
+
 
 
     NewChatWindow(BufferedReader input, String user, ObjectOutputStream output) {
@@ -32,13 +32,14 @@ public class NewChatWindow extends JFrame {
     }
 
     private void initComponents() {
-        logoutBtn = new JButton();
-        status = new JLabel();
-        jScrollPane1 = new JScrollPane();
+        JButton logoutBtn = new JButton();
+        // Variables declaration - do not modify
+        JLabel status = new JLabel();
+        JScrollPane jScrollPane1 = new JScrollPane();
         ta = new NewChatArea();
         ta.setContentType("text/html");
         tf = new JTextField();
-        send = new JButton();
+        JButton send = new JButton();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));
@@ -131,13 +132,6 @@ public class NewChatWindow extends JFrame {
 
         pack();
     }
-
-
-    // Variables declaration - do not modify
-    private JLabel status;
-    private JScrollPane jScrollPane1;
-    private JButton logoutBtn;
-    private JButton send;
 
 
     // End of variables declaration

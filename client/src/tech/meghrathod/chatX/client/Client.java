@@ -7,7 +7,7 @@ public class Client {
     public static void main(String[] args) throws Exception {
         System.out.println("Client Signing on");
         try {
-            Socket soc = new Socket("192.168.137.143", 9085);
+            Socket soc = new Socket("127.0.0.1", 9085);
             BufferedReader nis = new BufferedReader(new InputStreamReader(soc.getInputStream()));
             ObjectOutputStream oos = new ObjectOutputStream(soc.getOutputStream());
             LoginWindow user = new LoginWindow(nis, oos);
