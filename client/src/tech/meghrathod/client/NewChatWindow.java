@@ -3,6 +3,7 @@ package tech.meghrathod.client;
 
 import tech.meghrathod.userMessage;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.html.HTMLDocument;
@@ -11,6 +12,7 @@ import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.net.URL;
 import java.time.Instant;
 
 public class NewChatWindow extends JFrame {
@@ -40,6 +42,15 @@ public class NewChatWindow extends JFrame {
         ta.setContentType("text/html");
         tf = new JTextField();
         JButton send = new JButton();
+
+        URL url = null;
+        try {
+            url = new URL("https://cdn.jsdelivr.net/gh/meghrathod/chatX@master/chatX-icon.png");
+            this.setIconImage(ImageIO.read(url));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 204, 204));

@@ -1,12 +1,15 @@
 
 package tech.meghrathod.client;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 
 public class LoginWindow extends JFrame  implements ActionListener {
@@ -182,6 +185,14 @@ public class LoginWindow extends JFrame  implements ActionListener {
                                 .addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                                 .addContainerGap())
         );
+
+        URL url = null;
+        try {
+            url = new URL("https://cdn.jsdelivr.net/gh/meghrathod/chatX@master/chatX-icon.png");
+            this.setIconImage(ImageIO.read(url));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         pack();
     }
